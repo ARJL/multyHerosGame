@@ -37,9 +37,10 @@ public class Maze {
 		return null;
 	}
 	
-	public synchronized boolean loot2(Hero hero,Scheduler scheduler)throws InterruptedException
+	public  boolean loot2(Hero hero,Scheduler scheduler)throws InterruptedException
     {
-        notify();
+    	synchronized(this){
+    		notify();
         while ( scheduler.ids.size() == 0 ){
         	wait();
         }
@@ -68,6 +69,8 @@ public class Maze {
     		return scheduler.gameOver;
     	}
     	return scheduler.gameOver;
+    	}
+        
                 
     }
 	
