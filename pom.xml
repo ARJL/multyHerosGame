@@ -48,7 +48,7 @@
 		              <goal>java</goal>
 		            </goals>
 		            <configuration>
-		              <mainClass>maze.Game</mainClass>
+		              <mainClass>labyrinthe.Game</mainClass>
 		            </configuration>
 		          </execution>
 		          </executions>

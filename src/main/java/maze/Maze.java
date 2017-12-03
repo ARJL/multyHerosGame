@@ -39,7 +39,7 @@ public class Maze {
 	
 	public  boolean loot2(Hero hero,Scheduler scheduler)throws InterruptedException
     {
-    	synchronized(this){
+    	//synchronized(this){
     		notify();
         while ( scheduler.ids.size() == 0 ){
         	wait();
@@ -69,7 +69,7 @@ public class Maze {
     		return scheduler.gameOver;
     	}
     	return scheduler.gameOver;
-    	}
+    	//}
         
                 
     }
