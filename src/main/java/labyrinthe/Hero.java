@@ -3,6 +3,7 @@ package labyrinthe;
 import java.util.HashSet;
 import java.util.LinkedList;
 
+
 public class Hero extends Thread
 
 {
@@ -22,11 +23,11 @@ public class Hero extends Thread
 		//bfs and pick treasures
 		int nbTreasuresPicked = 0;
 		LinkedList<Room> queue=new LinkedList<>();
-		//ArrayList <Room> visitedRooms=new ArrayList<Room>();
 		HashSet<Room>visitedRooms=new HashSet<Room>();
 		
 		queue.add(start);
 		while(!queue.isEmpty()){
+			
 			Room room=queue.remove();
 			
 			nbTreasuresPicked+=room.loot();

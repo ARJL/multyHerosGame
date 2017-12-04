@@ -2,15 +2,17 @@ package labyrinthe;
 
 import java.util.ArrayList;
 import java.util.Random;
+import org.infinispan.creson.Shared;
 
 
 public class Maze {
 	
-	public ArrayList<Room> vertices=new ArrayList<>();
+	@Shared public ArrayList<Room> vertices=new ArrayList<>();
 	
 	public Maze(){
 		
 	}
+
 	
 	public Room addRoom(int id,int treasure){
 		Room rm=new Room(id,treasure);

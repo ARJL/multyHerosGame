@@ -11,11 +11,11 @@ public class Room  {
 	LinkedList<Room> adj;
 	
 	public Room(int id,int treasure){
-		synchronized(this){
+		//synchronized(this){
 			this.idRoom=id;
 			this.treasure=treasure;
 			this.adj=new LinkedList<Room>();
-		}
+		//}
 		
 	}
 
