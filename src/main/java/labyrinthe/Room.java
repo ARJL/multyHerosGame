@@ -9,9 +9,8 @@ import java.util.LinkedList;
 public class Room  {
 
 	@Id
-    int treasure=0;
-    
-    int idRoom;
+	int idRoom;
+	int treasure=0;
 	LinkedList<Room> adj;
 
 	public Room(){}
