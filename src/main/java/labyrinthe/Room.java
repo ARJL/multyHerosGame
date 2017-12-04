@@ -1,15 +1,20 @@
 package labyrinthe;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.LinkedList;
 
 
+@Entity
 public class Room  {
-	
-    int treasure=0;
-    
-    int idRoom;
+
+	@Id
+	int idRoom;
+	int treasure=0;
 	LinkedList<Room> adj;
-	
+
+	public Room(){}
+
 	public Room(int id,int treasure){
 		//synchronized(this){
 			this.idRoom=id;
