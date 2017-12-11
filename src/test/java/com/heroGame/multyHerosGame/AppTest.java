@@ -35,12 +35,15 @@ public class AppTest {
 //**********************	Start the game
 		
 		System.out.println("starting heros ...");
-		Hero h=new Hero(1,"SuperMario ",maze.vertices.get(0));
-		
-		h.start();
+		Hero h1=new Hero(1,"SuperMario ",maze.vertices.get(0));
+		Hero h2=new Hero(2,"SpiderMan ",maze.vertices.get(5));
+
+		h1.start();
+		h2.start();
 		
 		try {
-			h.join();
+			h1.join();
+			h2.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
