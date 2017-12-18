@@ -1,0 +1,10 @@
+22:25:42,459 INFO  (main:[]) [Codec21] ISPN004006: localhost/127.0.0.1:11222 sent new topology view (id=5, age=0) containing 2 addresses: [/0.0.0.0:11222]
+22:25:42,462 INFO  (main:[]) [TcpTransportFactory] ISPN004014: New server added(/0.0.0.0:11222), adding to the pool.
+22:25:42,463 INFO  (main:[]) [TcpTransportFactory] ISPN004016: Server not in cluster anymore(localhost/127.0.0.1:11222), removing from the pool.
+22:25:42,467 INFO  (main:[]) [RemoteCacheManager] ISPN004021: Infinispan version: 9.0.3.Final
+22:25:42,489 INFO  (main:[]) [Codec21] ISPN004006: /0.0.0.0:11222 sent new topology view (id=5, age=0) containing 2 addresses: [/0.0.0.0:11222]
+22:25:42,514 INFO  (main:[]) [Factory] Factory[org.infinispan.client.hotrod.impl.RemoteCacheImpl@48974e45] Created
+22:25:42,514 INFO  (main:[]) [Factory] AOF singleton  is Factory[org.infinispan.client.hotrod.impl.RemoteCacheImpl@48974e45]
+22:25:42,638 WARN  (main:[]) [Codec21] ISPN004005: Error received from the server: java.io.StreamCorruptedException: Unexpected byte found when reading an object: 50
+an exception which occurred:
+	in object of type org.infinispan.creson.object.CallConstruct
