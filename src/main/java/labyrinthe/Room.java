@@ -2,14 +2,20 @@ package labyrinthe;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import java.util.LinkedList;
 
-
+@Indexed
 @Entity
 public class Room  {
 
-	@Id
-	int idRoom;
+	@Field String title;
+	
+	
+	@Id int idRoom;
 	int treasure=0;
 	LinkedList<Room> adj;
 
