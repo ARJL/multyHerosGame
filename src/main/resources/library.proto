@@ -1,0 +1,6 @@
+message Room {
+  required string name = 1;
+  required int32 idRoom = 2;
+  required int32 treasure = 3; 
+  repeated Room adj = 4;
+}

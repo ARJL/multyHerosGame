@@ -1,0 +1,86 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.heroGame:multyHerosGame:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.hibernate:hibernate-search-infinispan:jar -> duplicate declaration of version 5.8.2.Final @ line 68, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building multyHerosGame 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact org.hibernate:hibernate-search-infinispan:jar:5.8.2.Final has been relocated to org.infinispan:infinispan-directory-provider:jar:9.0.1.Final
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ multyHerosGame ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ multyHerosGame ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.10:compile (default) @ multyHerosGame ---
+[INFO] No modifications found skipping aspectJ compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ multyHerosGame ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/jelassi/ASR/PFE/git/multyHerosGame/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ multyHerosGame ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.10:test-compile (default) @ multyHerosGame ---
+[INFO] No modifications found skipping aspectJ compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ multyHerosGame ---
+[INFO] Surefire report directory: /home/jelassi/ASR/PFE/git/multyHerosGame/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.heroGame.multyHerosGame.AppTest
+adding rooms into the maze ...
+connecting rooms ...
+starting heros ...
+SpiderMan  picked 0 treasures
+SuperMario  picked 0 treasures
+the cache used is: org.infinispan.client.hotrod.impl.RemoteCacheImpl@229c6181
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.946 sec <<< FAILURE! - in com.heroGame.multyHerosGame.AppTest
+should_handle_request(com.heroGame.multyHerosGame.AppTest)  Time elapsed: 25.569 sec  <<< ERROR!
+org.infinispan.protostream.DescriptorParserException: Duplicate definition of Room in library.proto and room.proto
+	at org.infinispan.protostream.descriptors.ResolutionContext.checkUniqueName(ResolutionContext.java:102)
+	at org.infinispan.protostream.descriptors.ResolutionContext.addGenericDescriptor(ResolutionContext.java:77)
+	at org.infinispan.protostream.descriptors.FileDescriptor.collectDescriptors(FileDescriptor.java:268)
+	at org.infinispan.protostream.descriptors.FileDescriptor.resolveDependencies(FileDescriptor.java:200)
+	at org.infinispan.protostream.descriptors.FileDescriptor.resolveDependencies(FileDescriptor.java:165)
+	at org.infinispan.protostream.impl.SerializationContextImpl.registerProtoFiles(SerializationContextImpl.java:114)
+	at org.infinispan.protostream.annotations.impl.ProtoSchemaGenerator.generateAndRegister(ProtoSchemaGenerator.java:122)
+	at org.infinispan.protostream.annotations.ProtoSchemaBuilder.build(ProtoSchemaBuilder.java:189)
+	at com.heroGame.multyHerosGame.AppTest.should_handle_request(AppTest.java:126)
+
+
+Results :
+
+Tests in error: 
+  AppTest.should_handle_request:126 » DescriptorParser Duplicate definition of R...
+
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 38.852 s
+[INFO] Finished at: 2018-01-19T18:19:49+01:00
+[INFO] Final Memory: 23M/342M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project multyHerosGame: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/jelassi/ASR/PFE/git/multyHerosGame/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
