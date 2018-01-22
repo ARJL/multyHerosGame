@@ -60,7 +60,7 @@ public class AppTest {
         maze =new Maze();
 		
 		System.out.println("adding rooms into the maze ...");
-		maze.addRooms(10);
+		maze.addRooms(5);
 		
 		System.out.println("connecting rooms ...");
 		maze.createMaze();
@@ -106,33 +106,33 @@ public class AppTest {
 				
 				//**************
 				
-				RemoteCache<Integer, Room> remoteCache = remoteCacheManager.getCache();
+				RemoteCache<Integer, Room> remoteCache = remoteCacheManager.getCache(Factory.CRESON_CACHE_NAME);
 				if (remoteCache == null) {
 			         System.out.println("Cache '"  + "' not found. Please make sure the server is properly configured");
 			    }else{
-			    	System.out.println("the cache used is: "+remoteCache);
+			    	System.out.println("the cache used is: "+remoteCache.getName());
 			    }
 				
 			      // Register entity marshallers on the client side ProtoStreamMarshaller instance associated with the remote cache manager.
 				//SerializationContext ctx = ProtoStreamMarshaller.getSerializationContext(remoteCacheManager);
-				serCtx.registerProtoFiles(FileDescriptorSource.fromResources("/library.proto"));
-				serCtx.registerMarshaller(new RoomMarsheller());
+				/*serCtx.registerProtoFiles(FileDescriptorSource.fromResources("/library.proto"));
+				serCtx.registerMarshaller(new RoomMarsheller());*/
 				
 			      // generate the 'room.proto' schema file based on the annotations on Memo class and register it with the SerializationContext of the client
-				 ProtoSchemaBuilder protoSchemaBuilder = new ProtoSchemaBuilder();
+				/* ProtoSchemaBuilder protoSchemaBuilder = new ProtoSchemaBuilder();
 			      String roomSchemaFile = protoSchemaBuilder
 			            .fileName("room.proto")
 			            .addClass(Room.class)
-			            .build(serCtx);
+			            .build(serCtx);*/
 				
 			   // register the schemas with the server too
-			      RemoteCache<String, String> metadataCache = remoteCacheManager.getCache(ProtobufMetadataManagerConstants.PROTOBUF_METADATA_CACHE_NAME);
+			      /*RemoteCache<String, String> metadataCache = remoteCacheManager.getCache(ProtobufMetadataManagerConstants.PROTOBUF_METADATA_CACHE_NAME);
 			      metadataCache.put("/library.proto", readResource("/library.proto"));
 			      metadataCache.put("room.proto", roomSchemaFile);
 			      String errors = metadataCache.get(ProtobufMetadataManagerConstants.ERRORS_KEY_SUFFIX);
 			      if (errors != null) {
 			         throw new IllegalStateException("Some Protobuf schema files contain errors:\n" + errors);
-			      }
+			      }*/
 			      
 			      
 			      QueryFactory qf = Search.getQueryFactory(remoteCache);

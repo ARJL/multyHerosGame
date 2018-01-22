@@ -15,6 +15,13 @@
 	</properties>
 
 	<dependencies>
+
+		<!--pour gérer le query facade -->
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-remote-query-server</artifactId>
+			<version>9.1.2.Final</version>
+		</dependency>
 	
 		<dependency>
 		    <groupId>org.infinispan</groupId>
@@ -40,6 +47,13 @@
 		    <groupId>org.infinispan</groupId>
 		    <artifactId>infinispan-client-hotrod</artifactId>
 		    <version>9.1.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.infinispan</groupId>
+			<artifactId>infinispan-server-hotrod</artifactId>
+			<version>9.0.3.Final</version>
+			<scope>test</scope>
 		</dependency>
         
 		<dependency>

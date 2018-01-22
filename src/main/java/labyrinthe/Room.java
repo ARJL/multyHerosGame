@@ -3,20 +3,21 @@ package labyrinthe;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-//import org.hibernate.search.annotations.Field;
-//import org.hibernate.search.annotations.Indexed;
-import org.infinispan.protostream.annotations.ProtoDoc;
-import org.infinispan.protostream.annotations.ProtoField;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+//import org.infinispan.protostream.annotations.ProtoDoc;
+//import org.infinispan.protostream.annotations.ProtoField;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
-//@Indexed
-@ProtoDoc("@Indexed")
+@Indexed
+//@ProtoDoc("@Indexed")
 @Entity
-public class Room  {
+public class Room implements Serializable {
 
-	//@Field String name;
-	@ProtoField (number = 1, required = true) String name;
+	@Field String name;
+	//@ProtoField (number = 1, required = true) String name;
 	
 	@Id int idRoom;
 	int treasure=0;
